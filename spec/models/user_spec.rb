@@ -3,7 +3,11 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   describe "User validation" do
     context "association" do
-      # to do ...
+      it{is_expected.to have_many :in_comes}
+      it{is_expected.to have_many :out_comes}
+      it{is_expected.to have_many :installments}
+      it{is_expected.to have_many :months}
+      it{is_expected.to have_many(:categories).with_foreign_key :creator_id}
     end
 
     context "column_specifications" do
