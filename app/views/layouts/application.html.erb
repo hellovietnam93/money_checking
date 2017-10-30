@@ -4,11 +4,22 @@
     <title>MoneyChecking</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="helper"></div>
+    <div id="root"></div>
   </body>
+  <script charset="utf-8">
+    <% if ENV["RAILS_ENV"] == "development" %>
+      var script = "http://" + (location.host || 'localhost').split(':')[0] + ":4000/webpack-bundle.js"
+    <% else %>
+      var script = "assets/webpack-bundle.js";
+    <% end %>
+    document.write('<script src="' + script + '"></' + 'script>');
+  </script>
 </html>
