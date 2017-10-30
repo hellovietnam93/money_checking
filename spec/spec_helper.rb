@@ -17,6 +17,8 @@ RSpec.configure do |config|
     add_filter "test/"
     add_filter "config/"
     add_filter "vendor/"
+    add_filter "app/client"
+    add_filter "app/channels"
 
     add_group "Controllers", "app/controllers"
     add_group "Models", "app/models"
