@@ -19,3 +19,8 @@
 .byebug_history
 /config/database.yml
 /config/secrets.yml
+
+# Ignore CI
+/.framgia-ci-reports
+.framgia-ci-result.temp.yml
+/coverage
