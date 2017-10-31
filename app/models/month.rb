@@ -4,5 +4,5 @@ class Month < ApplicationRecord
   belongs_to :user
 
   has_many :incomes, dependent: :destroy
-  has_many :out_comes, dependent: :destroy
+  has_many :outcomes, dependent: :destroy
 end
