@@ -1,11 +1,11 @@
 en:
-  categories:
+  months:
     attributes:
-      name: "Name"
+      value: "Value"
     placeholder:
-      name: "Enter category name ..."
+      value: "Enter month value ..."
     titles:
-      all: "Categories"
-      create: "Create new category"
-      update: "Change category"
-      destroy: "Remove category"
+      all: "Months"
+      create: "Create new month"
+      update: "Change month"
+      destroy: "Remove month"

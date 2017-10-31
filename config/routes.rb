@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :categories, only: %i(index new create edit update destroy)
   resources :incomes, only: %i(index new create edit update destroy)
   resources :outcomes, only: %i(index new create edit update destroy)
+  resources :months, only: %i(index new create edit update destroy)
 end
