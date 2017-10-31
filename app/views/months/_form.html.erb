@@ -1,0 +1,14 @@
+<%= form_for @month, role: "form" do |f| %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="value"><%= t "months.attributes.value" %></label>
+      <%= f.date_field :value, class: "form-control",
+        placeholder: t("months.placeholder.value"), autofocus: true %>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= link_to t("app.buttons.cancel"), months_path, class: "btn btn-default" %>
+    <%= f.submit t("app.buttons.submit"), class: "btn btn-info pull-right" %>
+  </div>
+<% end %>
