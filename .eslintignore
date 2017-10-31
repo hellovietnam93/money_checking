@@ -3,3 +3,4 @@ application.js
 cable.js
 webpack-bundle.js
 translations.js
+app.min.js

@@ -1,0 +1,15 @@
+scss_files:
+  - 'app/assets/stylesheets/**'
+exclude:
+  - 'app/assets/stylesheets/application.css'
+  - 'vendor/assets/**'
+  - 'app/assets/stylesheets/AdminLTE.min.css'
+  - 'app/assets/stylesheets/_all-skins.min.css'
+linters:
+  ImportantRule:
+    enabled: false
+  MergeableSelector:
+    enabled: false
+
+VendorPrefix:
+  enabled: false
