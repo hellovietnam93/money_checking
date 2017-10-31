@@ -1,21 +1,21 @@
-class IncomesController < ApplicationController
-  before_action :load_income, only: %i(edit update destroy)
+class ItemBuyingsController < ApplicationController
+  before_action :load_item_buying, only: %i(edit update destroy)
   before_action :load_data, only: %i(new edit)
 
   def index
-    @incomes = Income.all
+    @item_buyings = ItemBuying.all
   end
 
   def new
-    @income = Income.new
+    @item_buying = ItemBuying.new
   end
 
   def create
-    @income = current_user.incomes.new income_params
+    @item_buying = current_user.item_buyings.new item_buying_params
 
-    if income.save
+    if item_buying.save
       flash[:success] = flash_message "created"
-      redirect_to incomes_path
+      redirect_to item_buyings_path
     else
       return_fails_data
       render :new
@@ -25,9 +25,9 @@ class IncomesController < ApplicationController
   def edit; end
 
   def update
-    if income.update_attributes income_params
+    if item_buying.update_attributes item_buying_params
       flash[:success] = flash_message "updated"
-      redirect_to incomes_path
+      redirect_to item_buyings_path
     else
       return_fails_data
       render :edit
@@ -35,32 +35,31 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-    if income.destroy
+    if item_buying.destroy
       flash[:success] = flash_message "deleted"
     else
       flash[:warning] = flash_message "not_deleted"
     end
-    redirect_to incomes_path
+    redirect_to item_buyings_path
   end
 
   private
 
-  attr_reader :income, :incomes
+  attr_reader :item_buying, :item_buyings
 
-  def income_params
-    params.require(:income).permit Income::ATTRIBUTE_PARAMS
+  def item_buying_params
+    params.require(:item_buying).permit ItemBuying::ATTRIBUTE_PARAMS
   end
 
-  def load_income
-    @income = Income.find_by id: params[:id]
+  def load_item_buying
+    @item_buying = ItemBuying.find_by id: params[:id]
 
-    return if income
+    return if item_buying
     flash[:warning] = flash_message "record_not_found"
     redirect_to admin_root_path
   end
 
   def load_data
-    @months = Month.all.collect{|month| [month.value, month.id]}
     @categories = Category.all.collect{|category| [category.name, category.id]}
   end
 

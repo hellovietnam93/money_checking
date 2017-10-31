@@ -1,0 +1,22 @@
+<tr>
+  <td class="stt"><%= item_buying_counter + 1 %></td>
+  <td><%= item_buying.category.name %></td>
+  <td><%= item_buying.name %></td>
+  <td><%= number_to_currency item_buying.price %></td>
+  <td><%= item_buying.estimate_start_time %></td>
+  <td><%= item_buying.web_link %></td>
+  <td><%= t "item_buyings.statuses.#{item_buying.status}" %></td>
+  <td>
+    <%= link_to [:edit, item_buying], title: t("item_buyings.titles.update"),
+      class: "btn btn-warning" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to item_buying, method: :delete,
+      title: t("item_buyings.titles.destroy"), class: "btn btn-danger",
+      data: {confirm: t("app.confirmation")} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

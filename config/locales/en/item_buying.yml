@@ -1,0 +1,24 @@
+en:
+  item_buyings:
+    statuses:
+      planning: "Planning"
+      ready_to_buy: "Ready to buy"
+    attributes:
+      name: "Name"
+      category: "Category"
+      web_link: "Link"
+      status: "Status"
+      estimate_start_time: "Estimate start time"
+      price: "Price"
+    placeholder:
+      name: "Enter name ..."
+      category: "Select category"
+      web_link: "Enter link ..."
+      status: "Select status"
+      estimate_start_time: "Enter date ..."
+      price: "Enter price ..."
+    titles:
+      all: "Items need to buy"
+      create: "Create new item"
+      update: "Change item"
+      destroy: "Remove item"

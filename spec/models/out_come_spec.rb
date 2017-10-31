@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe OutCome, type: :model do
-  describe "OutCome validation" do
+RSpec.describe Outcome, type: :model do
+  describe "Outcome validation" do
     context "association" do
       it{is_expected.to belong_to :category}
       it{is_expected.to belong_to :month}

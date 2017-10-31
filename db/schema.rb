@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20171030044632) do
     t.date "estimate_start_time"
     t.string "name"
     t.string "web_link"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_item_buyings_on_category_id"

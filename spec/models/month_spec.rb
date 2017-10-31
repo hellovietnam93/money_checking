@@ -4,6 +4,9 @@ RSpec.describe Month, type: :model do
   describe "Month validation" do
     context "association" do
       it{is_expected.to belong_to :user}
+
+      it{is_expected.to have_many :incomes}
+      it{is_expected.to have_many :outcomes}
     end
 
     context "column_specifications" do

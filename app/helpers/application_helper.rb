@@ -32,9 +32,4 @@ module ApplicationHelper
                      value: t("#{model_name.pluralize}.#{enum}.#{key}")
     end.flatten
   end
-
-  def avatar
-    image_tag "default-user-img.png",
-      class: "img-circle profile-user-img img-responsive img-circle"
-  end
 end
