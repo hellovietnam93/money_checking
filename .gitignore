@@ -25,3 +25,11 @@
 .framgia-ci-result.temp.yml
 /coverage
 node_modules
+/public/system
+/public/assets/
+/public/uploads/
+app/assets/javascripts/i18n/
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

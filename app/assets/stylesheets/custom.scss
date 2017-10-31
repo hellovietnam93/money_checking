@@ -1,0 +1,37 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+.logo {
+  background: none !important;
+  float: left !important;
+  padding: 0 !important;
+  width: auto !important;
+
+  img {
+    max-height: 48px;
+    max-width: 90%;
+  }
+}
+
+.dropdown-menu {
+  .img-circle {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+.dropdown-toggle {
+  .img-circle {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 52px) !important;
+}
+
+body {
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+<aside class="control-sidebar control-sidebar-dark">
+  <section class="sidebar">
+    <div class="text-center right-sidebar-info">
+      <%= image_tag "default-user-img.png",
+        class: "img-circle avatar-right-sidebar" %>
+      <p><%= link_to current_user.username, "#" %></p>
+    </div>
+    <ul class="sidebar-menu sidebar-menu-right">
+      <li>
+        <%= link_to "#", tabindex: -1 do %>
+          <i class="fa fa-user"></i>
+          <span><%= t "users.titles.profile" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, tabindex: -1,
+          method: :delete do %>
+          <i class="fa fa-sign-out"></i>
+          <span><%= t "app.log_out" %></span>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+</aside>
+<div class="control-sidebar-bg"></div>
