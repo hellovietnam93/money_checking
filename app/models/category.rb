@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  ATTRIBUTE_PARAMS = %i(name creator_id).freeze
+  ATTRIBUTE_PARAMS = %i(name).freeze
 
   belongs_to :creator, class_name: User.name
 

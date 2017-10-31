@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="col-xs-4 text-center">
-                  <%= link_to t("app.log_out"), destroy_user_session_path, method: :delete,
+                  <%= link_to t("app.sign_out"), destroy_user_session_path, method: :delete,
                     class: "btn btn-default btn-flat" %>
                 </div>
               </li>
@@ -42,7 +42,7 @@
           <li>
             <%= link_to new_user_session_path do %>
               <i class="fa fa-sign-in fa-tw"></i>
-              <%= t "app.login.title" %>
+              <%= t "app.sign_in" %>
             <% end %>
           </li>
         <% end %>
