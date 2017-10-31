@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :rememberable, :trackable, :validatable
 
-  has_many :in_comes, dependent: :destroy
+  has_many :incomes, dependent: :destroy
   has_many :out_comes, dependent: :destroy
   has_many :categories, foreign_key: :creator_id, dependent: :destroy
   has_many :installments, dependent: :destroy

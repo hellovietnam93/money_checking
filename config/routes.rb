@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/pages/*page" => "pages#show"
 
   resources :categories, only: %i(index new create edit update destroy)
+  resources :incomes, only: %i(index new create edit update destroy)
 end

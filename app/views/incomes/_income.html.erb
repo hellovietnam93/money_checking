@@ -1,0 +1,20 @@
+<tr>
+  <td class="stt"><%= income_counter + 1 %></td>
+  <td><%= income.month.value %></td>
+  <td><%= income.category.name %></td>
+  <td><%= income.name %></td>
+  <td><%= number_to_currency income.value %></td>
+  <td>
+    <%= link_to [:edit, income], title: t("incomes.titles.update"),
+      class: "btn btn-warning" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to income, method: :delete,
+      title: t("incomes.titles.destroy"), class: "btn btn-danger",
+      data: {confirm: t("app.confirmation")} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>
