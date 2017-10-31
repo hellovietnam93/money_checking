@@ -1,0 +1,20 @@
+<tr>
+  <td class="stt"><%= outcome_counter + 1 %></td>
+  <td><%= outcome.month.value %></td>
+  <td><%= outcome.category.name %></td>
+  <td><%= outcome.name %></td>
+  <td><%= number_to_currency outcome.value %></td>
+  <td>
+    <%= link_to [:edit, outcome], title: t("outcomes.titles.update"),
+      class: "btn btn-warning" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to outcome, method: :delete,
+      title: t("outcomes.titles.destroy"), class: "btn btn-danger",
+      data: {confirm: t("app.confirmation")} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

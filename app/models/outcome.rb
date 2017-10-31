@@ -1,4 +1,4 @@
-class OutCome < ApplicationRecord
+class Outcome < ApplicationRecord
   ATTRIBUTE_PARAMS = %i(month_id user_id category_id name value).freeze
 
   belongs_to :category

@@ -1,0 +1,34 @@
+<%= form_for @outcome, role: "form" do |f| %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="name"><%= t "outcomes.attributes.name" %></label>
+      <%= f.text_field :name, class: "form-control",
+        placeholder: t("outcomes.placeholder.name"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="value"><%= t "outcomes.attributes.value" %></label>
+      <%= f.number_field :value, class: "form-control",
+        placeholder: t("outcomes.placeholder.value"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="month"><%= t "outcomes.attributes.month" %></label>
+      <%= f.select :month_id, options_for_select(@months, (f.object.month.id rescue nil)),
+        {prompt: t("outcomes.placeholder.month")},
+        {class: "form-control", autofocus: true} %>
+    </div>
+
+    <div class="form-group">
+      <label for="category"><%= t "outcomes.attributes.category" %></label>
+      <%= f.select :category_id, options_for_select(@categories, (f.object.category.id rescue nil)),
+        {prompt: t("outcomes.placeholder.category")},
+        {class: "form-control", autofocus: true} %>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= link_to t("app.buttons.cancel"), outcomes_path, class: "btn btn-default" %>
+    <%= f.submit t("app.buttons.submit"), class: "btn btn-info pull-right" %>
+  </div>
+<% end %>

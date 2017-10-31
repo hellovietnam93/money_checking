@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   belongs_to :creator, class_name: User.name
 
   has_many :incomes, dependent: :destroy
-  has_many :out_comes, dependent: :destroy
+  has_many :outcomes, dependent: :destroy
 end

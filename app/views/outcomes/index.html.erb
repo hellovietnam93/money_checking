@@ -1,0 +1,33 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><%= t "outcomes.titles.all" %></h3>
+    <div class="box-tools">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <div class="input-group-btn">
+          <%= link_to t("outcomes.titles.create"), new_outcome_path, class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t "outcomes.attributes.month" %></th>
+          <th><%= t "outcomes.attributes.category" %></th>
+          <th>
+            <%= t "outcomes.attributes.name" %>
+          </th>
+          <th><%= t "outcomes.attributes.value" %></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @outcomes %>
+      </tbody>
+    </table>
+  </div>
+</div>

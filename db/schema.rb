@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20171030044632) do
     t.index ["user_id"], name: "index_months_on_user_id"
   end
 
-  create_table "out_comes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "outcomes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "month_id"
     t.integer "user_id"
     t.integer "category_id"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20171030044632) do
     t.float "value", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_out_comes_on_category_id"
-    t.index ["month_id"], name: "index_out_comes_on_month_id"
-    t.index ["user_id"], name: "index_out_comes_on_user_id"
+    t.index ["category_id"], name: "index_outcomes_on_category_id"
+    t.index ["month_id"], name: "index_outcomes_on_month_id"
+    t.index ["user_id"], name: "index_outcomes_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
