@@ -10,6 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require app.min
+
+$(document).on('turbolinks:load', function(){
+  set_timeout();
+});
+
+function set_timeout() {
+  $('.alert').delay(3000).slideUp();
+}

@@ -1,0 +1,45 @@
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo" style="margin-bottom: 10px">
+      <span style="font-size: 26px">
+        <%= link_to t("app.name"), root_path %>
+      </span>
+    </div>
+    <div class="login-box-body">
+      <p class="login-box-msg"><%= t "app.instruction" %></p>
+      <%= form_for resource, as: resource_name, url: session_path(resource_name), html: {class: "row-fluid"} do |f| %>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+            <%= f.text_field :email, class: "form-control", placeholder: t("users.attributes.email") %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.password_field :password, class: "form-control", placeholder: t("users.attributes.password") %>
+            <span class="input-group-addon">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :remember_me %>
+                <%= t "users.attributes.remember_me" %>
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <%= f.submit t("app.sign_in"), class: "btn btn-primary btn-block btn-flat" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

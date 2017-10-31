@@ -30,7 +30,7 @@ RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
-  except_methods: [],
+  except_methods: ['PagesController#show'],
   ignored_files: []
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {sessions: "users/sessions"}
 
-  root "pages#index"
+  root "pages#show", page: "home"
 
-  get "*path", to: "pages#index"
+  get "/pages/*page" => "pages#show"
+
+  resources :categories, only: %i(index new create edit update destroy)
 end

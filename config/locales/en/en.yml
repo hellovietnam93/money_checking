@@ -30,4 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    main_functions: "Main functions"
+    master_data: "Master data"
+    name: "Money checking"
+    sign_in: "Sign in"
+    sign_out: Sign out
+    form:
+      errors: "Form has %{error_count} errors!"
+    buttons:
+      submit: "Submit"
+      cancel: "Cancel"
+    confirmation: "Are you sure?"
+    instruction: "Sign in to start your session"
+  sidebars:
+    category: "Category"

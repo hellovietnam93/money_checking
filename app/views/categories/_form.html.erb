@@ -1,0 +1,14 @@
+<%= form_for @category, role: "form" do |f| %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="name"><%= t "categories.attributes.name" %></label>
+      <%= f.text_field :name, class: "form-control",
+        placeholder: t("categories.placeholder.name") %>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= link_to t("app.buttons.cancel"), categories_path, class: "btn btn-default" %>
+    <%= f.submit t("app.buttons.submit"), class: "btn btn-info pull-right" %>
+  </div>
+<% end %>

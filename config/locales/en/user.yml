@@ -1,0 +1,6 @@
+en:
+  users:
+    attributes:
+      email: "Email"
+      password: "Password"
+      remember_me: "Remembers in this computer"

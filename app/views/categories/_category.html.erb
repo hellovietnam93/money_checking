@@ -1,0 +1,17 @@
+<tr>
+  <td class="stt"><%= category_counter + 1 %></td>
+  <td><%= category.name %></td>
+  <td>
+    <%= link_to [:edit, category], title: t("categories.titles.update"),
+      class: "btn btn-warning" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to category, method: :delete,
+      title: t("categories.titles.destroy"), class: "btn btn-danger",
+      data: {confirm: t("app.confirmation")} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>
