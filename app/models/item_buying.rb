@@ -4,7 +4,7 @@ class ItemBuying < ApplicationRecord
       user_id category_id price estimate_start_time name web_link status
     ).freeze
 
-  enum status: %i(ready_to_buy planning)
+  enum status: %i(planning ready_to_buy)
 
   belongs_to :category
   belongs_to :user

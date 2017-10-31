@@ -7,7 +7,7 @@ class CreateItemBuyings < ActiveRecord::Migration[5.1]
       t.date :estimate_start_time
       t.string :name
       t.string :web_link
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end

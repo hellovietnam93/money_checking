@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe InCome, type: :model do
-  describe "InCome validation" do
+RSpec.describe Income, type: :model do
+  describe "Income validation" do
     context "association" do
       it{is_expected.to belong_to :category}
       it{is_expected.to belong_to :month}

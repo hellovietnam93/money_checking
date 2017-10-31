@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   describe "Category validation" do
     context "association" do
-      it{is_expected.to have_many :in_comes}
-      it{is_expected.to have_many :out_comes}
+      it{is_expected.to have_many :incomes}
+      it{is_expected.to have_many :outcomes}
 
       it{is_expected.to belong_to(:creator).class_name(User.name)}
     end

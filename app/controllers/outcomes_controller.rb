@@ -17,8 +17,7 @@ class OutcomesController < ApplicationController
       flash[:success] = flash_message "created"
       redirect_to outcomes_path
     else
-      load_data
-      flash.now[:warning] = flash_message "not_created"
+      return_fails_data
       render :new
     end
   end
@@ -30,8 +29,7 @@ class OutcomesController < ApplicationController
       flash[:success] = flash_message "updated"
       redirect_to outcomes_path
     else
-      load_data
-      flash.now[:warning] = flash_message "not_updated"
+      return_fails_data
       render :edit
     end
   end
@@ -62,7 +60,12 @@ class OutcomesController < ApplicationController
   end
 
   def load_data
-    @months = Month.all.collect{|month|[month.value, month.id]}
-    @categories = Category.all.collect{|category|[category.name, category.id]}
+    @months = Month.all.collect{|month| [month.value, month.id]}
+    @categories = Category.all.collect{|category| [category.name, category.id]}
+  end
+
+  def return_fails_data
+    load_data
+    flash.now[:warning] = flash_message "not_#{params[:action]}d"
   end
 end

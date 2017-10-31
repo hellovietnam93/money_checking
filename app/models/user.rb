@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :categories, foreign_key: :creator_id, dependent: :destroy
   has_many :installments, dependent: :destroy
   has_many :months, dependent: :destroy
+  has_many :item_buyings, dependent: :destroy
 end

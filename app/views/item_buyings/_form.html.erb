@@ -1,0 +1,48 @@
+<%= form_for @item_buying, role: "form" do |f| %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="name"><%= t "item_buyings.attributes.name" %></label>
+      <%= f.text_field :name, class: "form-control",
+        placeholder: t("item_buyings.placeholder.name"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="price"><%= t "item_buyings.attributes.price" %></label>
+      <%= f.number_field :price, class: "form-control",
+        placeholder: t("item_buyings.placeholder.price"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="estimate_start_time"><%= t "item_buyings.attributes.estimate_start_time" %></label>
+      <%= f.date_field :estimate_start_time, class: "form-control",
+        placeholder: t("item_buyings.placeholder.estimate_start_time"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="web_link"><%= t "item_buyings.attributes.web_link" %></label>
+      <%= f.text_field :web_link, class: "form-control",
+        placeholder: t("item_buyings.placeholder.web_link"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <label for="category"><%= t "item_buyings.attributes.category" %></label>
+      <%= f.select :category_id, options_for_select(@categories, (f.object.category.id rescue nil)),
+        {prompt: t("outcomes.placeholder.category")},
+        {class: "form-control", autofocus: true} %>
+    </div>
+
+    <div class="form-group">
+      <label for="name"><%= t "item_buyings.attributes.name" %></label>
+      <%= f.select :status,
+        options_from_collection_for_select(
+        i18n_enum(:item_buyings, :status), :key, :value,
+        f.object.status), {},
+        class: "form-control status", autofocus: true %>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= link_to t("app.buttons.cancel"), item_buyings_path, class: "btn btn-default" %>
+    <%= f.submit t("app.buttons.submit"), class: "btn btn-info pull-right" %>
+  </div>
+<% end %>
