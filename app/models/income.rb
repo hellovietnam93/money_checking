@@ -1,4 +1,4 @@
-class InCome < ApplicationRecord
+class Income < ApplicationRecord
   ATTRIBUTE_PARAMS = %i(month_id user_id category_id name value).freeze
 
   belongs_to :category

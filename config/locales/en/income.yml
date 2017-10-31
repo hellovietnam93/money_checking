@@ -1,0 +1,17 @@
+en:
+  incomes:
+    attributes:
+      name: "Name"
+      value: "Value"
+      month: "Month"
+      category: "Category"
+    placeholder:
+      name: "Enter income name ..."
+      value: "Enter income value ..."
+      month: "Select month"
+      category: "Select category"
+    titles:
+      all: "Incomes"
+      create: "Create new income"
+      update: "Change income"
+      destroy: "Remove income"

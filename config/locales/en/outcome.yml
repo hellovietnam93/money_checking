@@ -1,0 +1,11 @@
+en:
+  categories:
+    attributes:
+      name: "Name"
+    placeholder:
+      name: "Enter category name ..."
+    titles:
+      all: "Categories"
+      create: "Create new category"
+      update: "Change category"
+      destroy: "Remove category"
