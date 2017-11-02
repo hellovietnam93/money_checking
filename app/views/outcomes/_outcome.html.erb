@@ -4,6 +4,7 @@
   <td><%= outcome.category.name %></td>
   <td><%= outcome.name %></td>
   <td><%= number_to_currency outcome.value %></td>
+  <td><%= outcome.note %></td>
   <td>
     <%= link_to [:edit, outcome], title: t("outcomes.titles.update"),
       class: "btn btn-warning" do %>
