@@ -5,11 +5,13 @@ en:
       value: "Value"
       month: "Month"
       category: "Category"
+      note: "Note"
     placeholder:
       name: "Enter income name ..."
       value: "Enter income value ..."
       month: "Select month"
       category: "Select category"
+      note: "Enter income note ..."
     titles:
       all: "Incomes"
       create: "Create new income"

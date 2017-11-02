@@ -4,6 +4,7 @@
   <td><%= income.category.name %></td>
   <td><%= income.name %></td>
   <td><%= number_to_currency income.value %></td>
+  <td><%= income.note %></td>
   <td>
     <%= link_to [:edit, income], title: t("incomes.titles.update"),
       class: "btn btn-warning" do %>

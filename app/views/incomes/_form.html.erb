@@ -13,6 +13,12 @@
     </div>
 
     <div class="form-group">
+      <label for="note"><%= t "incomes.attributes.note" %></label>
+      <%= f.text_area :note, class: "form-control",
+        placeholder: t("incomes.placeholder.note"), autofocus: true %>
+    </div>
+
+    <div class="form-group">
       <label for="month"><%= t "incomes.attributes.month" %></label>
       <%= f.select :month_id, options_for_select(@months, (f.object.month.id rescue nil)),
         {prompt: t("incomes.placeholder.month")},

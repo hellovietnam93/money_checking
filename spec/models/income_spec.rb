@@ -14,6 +14,7 @@ RSpec.describe Income, type: :model do
       it{is_expected.to have_db_column(:month_id).of_type(:integer)}
       it{is_expected.to have_db_column(:name).of_type(:string)}
       it{is_expected.to have_db_column(:value).of_type(:float)}
+      it{is_expected.to have_db_column(:note).of_type(:text)}
     end
   end
 
