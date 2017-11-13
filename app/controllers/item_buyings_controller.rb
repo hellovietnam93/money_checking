@@ -56,7 +56,7 @@ class ItemBuyingsController < ApplicationController
 
     return if item_buying
     flash[:warning] = flash_message "record_not_found"
-    redirect_to admin_root_path
+    redirect_to root_path
   end
 
   def load_data
