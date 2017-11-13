@@ -55,6 +55,6 @@ class MonthsController < ApplicationController
 
     return if month
     flash[:warning] = flash_message "record_not_found"
-    redirect_to admin_root_path
+    redirect_to root_path
   end
 end

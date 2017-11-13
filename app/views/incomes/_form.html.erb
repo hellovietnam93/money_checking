@@ -20,9 +20,15 @@
 
     <div class="form-group">
       <label for="month"><%= t "incomes.attributes.month" %></label>
-      <%= f.select :month_id, options_for_select(@months, (f.object.month.id rescue nil)),
-        {prompt: t("incomes.placeholder.month")},
-        {class: "form-control", autofocus: true} %>
+      <% if f.object.new_record? %>
+        <%= f.select :month_id, options_for_select(@months, Month.last.id),
+          {prompt: t("incomes.placeholder.month")},
+          {class: "form-control", autofocus: true} %>
+      <% else %>
+        <%= f.select :month_id, options_for_select(@months, f.object.month.id),
+          {prompt: t("incomes.placeholder.month")},
+          {class: "form-control", autofocus: true} %>
+      <% end %>
     </div>
 
     <div class="form-group">

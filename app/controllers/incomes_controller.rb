@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   before_action :load_data, only: %i(new edit)
 
   def index
-    @incomes = Income.all
+    @incomes = current_user.incomes.includes(:month, :category)
   end
 
   def new
@@ -56,7 +56,7 @@ class IncomesController < ApplicationController
 
     return if income
     flash[:warning] = flash_message "record_not_found"
-    redirect_to admin_root_path
+    redirect_to root_path
   end
 
   def load_data
