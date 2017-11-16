@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :load_category, only: %i(edit update destroy)
 
   def index
-    @categories = Category.all
+    @categories = current_user.categories.order :name
   end
 
   def new

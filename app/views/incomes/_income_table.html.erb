@@ -1,0 +1,21 @@
+<div class="tab-pane fade active in" role="tabpanel" id="income-table" aria-labelledby="table-tab">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%= t "incomes.attributes.month" %></th>
+        <th><%= t "incomes.attributes.category" %></th>
+        <th>
+          <%= t "incomes.attributes.name" %>
+        </th>
+        <th><%= t "incomes.attributes.value" %></th>
+        <th><%= t "incomes.attributes.note" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @incomes %>
+    </tbody>
+  </table>
+</div>

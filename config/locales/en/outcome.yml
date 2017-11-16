@@ -17,3 +17,6 @@ en:
       create: "Create new outcome"
       update: "Change outcome"
       destroy: "Remove outcome"
+    tabs:
+      table: Detail
+      statistics: Statistics

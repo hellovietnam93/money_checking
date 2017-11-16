@@ -20,6 +20,7 @@ gem "config"
 gem "bootstrap-sass"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "font-awesome-rails"
+gem "highcharts-rails"
 
 group :development, :test do
   gem "better_errors"

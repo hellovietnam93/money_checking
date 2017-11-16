@@ -36,6 +36,7 @@ en:
     name: "Money checking"
     sign_in: "Sign in"
     sign_out: Sign out
+    search: Search
     form:
       errors: "Form has %{error_count} errors!"
     buttons:
@@ -49,3 +50,64 @@ en:
     outcome: "Outcome"
     month: "Month"
     item_buying: "Item need to buy"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+      month: "%d/%Y"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 2
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  statistics:
+    pie:
+      category: Category
+      serie_name: Value
+      titles:
+        incomes: Total income in %{date}
+        outcomes: Total outcome in %{date}
