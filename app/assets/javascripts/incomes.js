@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function() {
   if ($("#statistics").length > 0) {
     Highcharts.chart('statistics', {
       chart: {

@@ -112,3 +112,10 @@ en:
       titles:
         incomes: Total income in %{date}
         outcomes: Total outcome in %{date}
+    line:
+      y_axis: 'Dollar ($)'
+      titles:
+        incomes: Income
+        outcomes: Outcome
+        balances: Balance
+        monthly_blance: Monthly Balance

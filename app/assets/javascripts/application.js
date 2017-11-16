@@ -21,6 +21,7 @@
 //= require highcharts
 //= require highcharts/highcharts-more
 //= require incomes
+//= require monthly_blance
 
 $(document).on('turbolinks:load', function(){
   set_timeout();
