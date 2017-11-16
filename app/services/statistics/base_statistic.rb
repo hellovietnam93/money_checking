@@ -3,7 +3,8 @@ module Statistics
     def initialize args
       @data = args[:data]
       @categories = args[:categories]
-      @response_data = [{name: I18n.t("statistics.orther"), y: 0, extraValue: 0}]
+      @response_data = Array.new
+      @orther = {name: I18n.t("statistics.orther"), y: 0, extraValue: 0}
       @total = 0
       @data.each do |d|
         @total += d.value if d.value.present?
@@ -12,7 +13,7 @@ module Statistics
 
     def execute
       calculate_data
-      @response_data.reverse
+      @response_data
     end
 
     private
@@ -26,16 +27,20 @@ module Statistics
         percent = 0
         percent = sum / @total * 100 if @total > 0
 
-        if percent < 5.0
-          @response_data.first[:y] += sum
-          @response_data.first[:extraValue] += percent
+        if @total > 0 && percent < 5.0
+          @orther[:y] += sum
+          @orther[:extraValue] += percent
         else
           @response_data << {name: category.first, y: sum,
             extraValue: ActionController::Base.helpers.number_to_percentage(percent)}
         end
       end
-      @response_data.first[:extraValue] =
-        ActionController::Base.helpers.number_to_percentage(@response_data.first[:extraValue])
+
+      if @orther[:y] > 0
+        @orther[:extraValue] =
+          ActionController::Base.helpers.number_to_percentage(@response_data.first[:extraValue])
+        @response_data << @orther
+      end
     end
   end
 end
