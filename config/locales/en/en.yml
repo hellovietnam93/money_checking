@@ -55,7 +55,7 @@ en:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
-      month: "%d/%Y"
+      month: "%m/%Y"
   number:
     currency:
       format:
@@ -105,6 +105,7 @@ en:
       format:
         delimiter: ''
   statistics:
+    orther: Orther
     pie:
       category: Category
       serie_name: Value

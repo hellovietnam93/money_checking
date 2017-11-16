@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.1.4"
-gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
@@ -23,6 +22,7 @@ gem "font-awesome-rails"
 gem "highcharts-rails"
 
 group :development, :test do
+  gem "mysql2", ">= 0.3.18", "< 0.5"
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
@@ -69,6 +69,10 @@ group :test do
   gem "capybara"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  gem "rails_12factor"
+  gem "pg"
+end
 
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "mini_racer", platforms: :ruby
