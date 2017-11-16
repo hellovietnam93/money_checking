@@ -38,7 +38,7 @@ module Statistics
 
       if @orther[:y] > 0
         @orther[:extraValue] =
-          ActionController::Base.helpers.number_to_percentage(@response_data.first[:extraValue])
+          ActionController::Base.helpers.number_to_percentage(@orther[:extraValue])
         @response_data << @orther
       end
     end
