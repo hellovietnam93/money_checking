@@ -77,7 +77,7 @@ class IncomesController < ApplicationController
   end
 
   def load_data
-    @months = Month.all.collect{|month| [month.value, month.id]}
+    @months = Month.all.collect{|month| [I18n.l(month.value, format: :month), month.id]}
     @categories = Category.all.collect{|category| [category.name, category.id]}
   end
 
