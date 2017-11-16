@@ -10,25 +10,50 @@
     </div>
   </div>
 
-  <div class="box-body table-responsive no-padding">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th><%= t "incomes.attributes.month" %></th>
-          <th><%= t "incomes.attributes.category" %></th>
-          <th>
-            <%= t "incomes.attributes.name" %>
-          </th>
-          <th><%= t "incomes.attributes.value" %></th>
-          <th><%= t "incomes.attributes.note" %></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @incomes %>
-      </tbody>
-    </table>
+  <div class="box-body">
+    <%= form_tag @search, url: incomes_path, method: :get do %>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <%= select_tag "month_id", options_for_select(@months, @month.last),
+              include_blank: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <%= select_tag "category_id", options_for_select(@categories),
+              include_blank: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <%= button_tag type: "submit", class: "btn btn-success" do %>
+              <i class="glyphicon glyphicon-search"></i>
+              <span><%= t "app.search" %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="box-footer">
+    <ul class="nav nav-tabs" id="income-tab" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#income-table" id="table-tab" role="tab" data-toggle="tab" aria-controls="table" aria-expanded="false">
+          <%= t "incomes.tabs.table" %>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#income-statistics" role="tab" id="statistics-tab" data-toggle="tab" aria-controls="statistics" aria-expanded="true">
+          <%= t "incomes.tabs.statistics" %>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="income-tab-content">
+      <%= render "income_table" %>
+      <%= render "income_statistic" %>
+    </div>
   </div>
 </div>

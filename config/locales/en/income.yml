@@ -17,3 +17,6 @@ en:
       create: "Create new income"
       update: "Change income"
       destroy: "Remove income"
+    tabs:
+      table: Detail
+      statistics: Statistics

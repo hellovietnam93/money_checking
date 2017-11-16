@@ -2,7 +2,7 @@ class MonthsController < ApplicationController
   before_action :load_month, only: %i(edit update destroy)
 
   def index
-    @months = Month.all
+    @months = current_user.months
   end
 
   def new

@@ -18,6 +18,9 @@
 //= require i18n.js
 //= require i18n/translations
 //= require app.min
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require incomes
 
 $(document).on('turbolinks:load', function(){
   set_timeout();
