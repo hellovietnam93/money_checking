@@ -3,6 +3,13 @@
   <td><%= income.month.value %></td>
   <td><%= income.category.name %></td>
   <td><%= income.name %></td>
+  <td>
+    <% if income.main_income? %>
+      <%= image_tag "main_income.png", size: "40x40", alt: t("incomes.attributes.main_income") %>
+    <% else %>
+      <%= image_tag "not_main_income.png", size: "40x40", alt: t("incomes.attributes.main_income") %>
+    <% end %>
+  </td>
   <td><%= number_to_currency income.value %></td>
   <td><%= income.note %></td>
   <td>

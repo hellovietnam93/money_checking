@@ -1,9 +1,17 @@
 <%= form_for @month, role: "form" do |f| %>
+  <%= render "shared/errors_messages", object: f.object %>
+
   <div class="box-body">
     <div class="form-group">
       <label for="value"><%= t "months.attributes.value" %></label>
-      <%= f.date_field :value, class: "form-control",
-        placeholder: t("months.placeholder.value"), autofocus: true %>
+      <% if f.object.new_record? %>
+        <%= f.date_field :value, class: "form-control",
+          placeholder: t("months.placeholder.value"),
+          value: Date.today.beginning_of_month, autofocus: true %>
+      <% else %>
+        <%= f.date_field :value, class: "form-control",
+          placeholder: t("months.placeholder.value"), autofocus: true %>
+      <% end %>
     </div>
   </div>
 

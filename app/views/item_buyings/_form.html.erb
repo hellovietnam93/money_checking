@@ -1,4 +1,6 @@
 <%= form_for @item_buying, role: "form" do |f| %>
+  <%= render "shared/errors_messages", object: f.object %>
+
   <div class="box-body">
     <div class="form-group">
       <label for="name"><%= t "item_buyings.attributes.name" %></label>

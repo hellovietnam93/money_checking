@@ -5,4 +5,6 @@ class Month < ApplicationRecord
 
   has_many :incomes, dependent: :destroy
   has_many :outcomes, dependent: :destroy
+
+  validates :value, presence: true
 end
