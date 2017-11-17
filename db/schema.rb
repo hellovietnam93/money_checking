@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117071029) do
+ActiveRecord::Schema.define(version: 20171117080815) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20171117071029) do
     t.datetime "updated_at", null: false
     t.text "note"
     t.boolean "main_income", default: false
+    t.date "month"
     t.index ["category_id"], name: "index_incomes_on_category_id"
     t.index ["month_id"], name: "index_incomes_on_month_id"
     t.index ["user_id"], name: "index_incomes_on_user_id"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20171117071029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "note"
+    t.date "month"
     t.index ["category_id"], name: "index_outcomes_on_category_id"
     t.index ["month_id"], name: "index_outcomes_on_month_id"
     t.index ["user_id"], name: "index_outcomes_on_user_id"
