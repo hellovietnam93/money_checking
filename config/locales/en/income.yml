@@ -6,6 +6,7 @@ en:
       month: "Month"
       category: "Category"
       note: "Note"
+      main_income: "Main income"
     placeholder:
       name: "Enter income name ..."
       value: "Enter income value ..."

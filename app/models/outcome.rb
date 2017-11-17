@@ -4,4 +4,7 @@ class Outcome < ApplicationRecord
   belongs_to :category
   belongs_to :month
   belongs_to :user
+
+  validates :name, presence: true
+  validates :value, presence: true
 end
