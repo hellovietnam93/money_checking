@@ -6,20 +6,20 @@ class OutcomesController < ApplicationController
     @outcomes =
       if params[:category_id].present?
         current_user.outcomes.includes(:category)
-          .where category_id: params[:category_id]
+          .where(category_id: params[:category_id]).order :month
       elsif params[:month].present?
         month = params[:month].split("-")
         current_user.outcomes.includes(:category)
-          .in_month(month.first, month.last).order :category_id
+          .in_month(month.first, month.last).order :month
       elsif params[:category_id].present? && params[:month].present?
         month = params[:month].split("-")
         current_user.outcomes.includes(:category)
           .where(category_id: params[:category_id])
-          .in_month month.first, month.last
+          .in_month(month.first, month.last).order :month
       else
         current_user.outcomes.includes(:category)
           .in_month(Date.today.year, Date.today.month)
-          .order :category_id
+          .order :month
       end
     load_statistic_data
   end
@@ -78,7 +78,7 @@ class OutcomesController < ApplicationController
   end
 
   def load_data
-    @categories = Category.all.collect{|category| [category.name, category.id]}
+    @categories = Category.all.order(:name).collect{|category| [category.name, category.id]}
   end
 
   def return_fails_data
