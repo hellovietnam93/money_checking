@@ -2,7 +2,8 @@ module Statistics
   class MonthlyBalance
     def initialize args
       @user = args[:user]
-      @months = @user.months.last Settings.lastest_months
+      @months = Array.new
+      load_months
       @monthly_blance = Array.new
       @categories = Array.new
       @incomes = Array.new
@@ -34,14 +35,22 @@ module Statistics
 
     def calculate_data
       @months.each do |month|
-        @categories << I18n.l(month.value, format: :month)
-        income_total = @user.incomes.where(month_id: month.id).sum :value
-        outcome_total = @user.outcomes.where(month_id: month.id).sum :value
+        @categories << I18n.l(month, format: :month)
+        income_total = @user.incomes.in_month(month.year, month.month).sum :value
+        outcome_total = @user.outcomes.in_month(month.year, month.month).sum :value
         balances = income_total - outcome_total
         @incomes << income_total
         @outcomes << outcome_total
         @balances << balances
       end
+    end
+
+    def load_months
+      today = Date.today.beginning_of_month
+      Settings.lastest_months.times do |n|
+        @months << (today - n.month)
+      end
+      @months = @months.reverse
     end
   end
 end

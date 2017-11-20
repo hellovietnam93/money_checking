@@ -1,7 +1,7 @@
 class Income < ApplicationRecord
   ATTRIBUTE_PARAMS =
     %i(month user_id category_id name value note main_income).freeze
-  MONTH_QUERY = "extract(year from month) = ? && extract(month from month) = ?"
+  MONTH_QUERY = "extract(year from month) = ? AND extract(month from month) = ?"
 
   belongs_to :category
   belongs_to :user
