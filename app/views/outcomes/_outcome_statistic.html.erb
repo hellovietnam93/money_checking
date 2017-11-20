@@ -1,4 +1,6 @@
 <div class="tab-pane fade" role="tabpanel" id="outcome-statistics" aria-labelledby="statistics-tab">
   <div id="statistics" data-statistics="<%= @outcome_statistics %>"
-    data-type="outcomes" data-date=<%= @month.first %>></div>
+    data-type="outcomes"
+    data-date="<%= params[:month] || l(Date.today, format: :month) %>">
+  </div>
 </div>

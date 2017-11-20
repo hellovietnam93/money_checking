@@ -1,24 +1,24 @@
 class IncomesController < ApplicationController
   before_action :load_income, only: %i(edit update destroy)
   before_action :load_data, only: %i(index new edit)
-  before_action :load_month, only: :index
 
   def index
     @incomes =
       if params[:category_id].present?
-        current_user.incomes.includes(:month, :category)
+        current_user.incomes.includes(:category)
           .where category_id: params[:category_id]
-      elsif params[:month_id].present?
-        @month = @months.find{|month| month.last == params[:month_id].to_i}
-        current_user.incomes.includes(:month, :category)
-          .where month_id: params[:month_id]
-      elsif params[:category_id].present? && params[:month_id].present?
-        @month = @months.find{|month| month.last == params[:month_id].to_i}
-        current_user.incomes.includes(:month, :category)
-          .where category_id: params[:category_id], month_id: params[:month_id]
+      elsif params[:month].present?
+        month = params[:month].split("-")
+        current_user.incomes.includes(:category)
+          .in_month month.first, month.last
+      elsif params[:category_id].present? && params[:month].present?
+        month = params[:month].split("-")
+        current_user.incomes.includes(:category)
+          .where(category_id: params[:category_id])
+          .in_month month.first, month.last
       else
-        current_user.incomes.includes(:month, :category)
-          .where month_id: @month.last
+        current_user.incomes.includes(:category)
+          .in_month Date.today.year, Date.today.month
       end
     load_statistic_data
   end
@@ -77,7 +77,6 @@ class IncomesController < ApplicationController
   end
 
   def load_data
-    @months = Month.all.collect{|month| [I18n.l(month.value, format: :month), month.id]}
     @categories = Category.all.collect{|category| [category.name, category.id]}
   end
 
@@ -90,10 +89,5 @@ class IncomesController < ApplicationController
     @income_statistics =
       Statistics::BaseStatistic.new(data: @incomes, categories: @categories)
         .execute
-  end
-
-  def load_month
-    lastest_month = Month.last
-    @month = [I18n.l(lastest_month.value, format: :month), lastest_month.id]
   end
 end

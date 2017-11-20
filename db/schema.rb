@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117080815) do
+ActiveRecord::Schema.define(version: 20171120012208) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20171117080815) do
   end
 
   create_table "incomes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "month_id"
     t.integer "user_id"
     t.integer "category_id"
     t.string "name"
@@ -32,7 +31,6 @@ ActiveRecord::Schema.define(version: 20171117080815) do
     t.boolean "main_income", default: false
     t.date "month"
     t.index ["category_id"], name: "index_incomes_on_category_id"
-    t.index ["month_id"], name: "index_incomes_on_month_id"
     t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
@@ -72,7 +70,6 @@ ActiveRecord::Schema.define(version: 20171117080815) do
   end
 
   create_table "outcomes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "month_id"
     t.integer "user_id"
     t.integer "category_id"
     t.string "name"
@@ -82,7 +79,6 @@ ActiveRecord::Schema.define(version: 20171117080815) do
     t.text "note"
     t.date "month"
     t.index ["category_id"], name: "index_outcomes_on_category_id"
-    t.index ["month_id"], name: "index_outcomes_on_month_id"
     t.index ["user_id"], name: "index_outcomes_on_user_id"
   end
 

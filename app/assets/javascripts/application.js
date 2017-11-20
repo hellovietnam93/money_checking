@@ -22,9 +22,20 @@
 //= require highcharts/highcharts-more
 //= require incomes
 //= require monthly_blance
+//= require bootstrap-datepicker
 
 $(document).on('turbolinks:load', function(){
   set_timeout();
+
+  $('.search-month').datepicker({
+    format: 'yyyy-mm',
+    viewMode: 'months',
+    minViewMode: 'months'
+  });
+
+  $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd'
+  })
 });
 
 function set_timeout() {

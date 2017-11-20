@@ -23,13 +23,9 @@
     <div class="form-group">
       <label for="month"><%= t "outcomes.attributes.month" %></label>
       <% if f.object.new_record? %>
-        <%= f.select :month_id, options_for_select(@months, Month.last.id),
-          {prompt: t("outcomes.placeholder.month")},
-          {class: "form-control", autofocus: true} %>
+        <%= f.text_field :month, class: "form-control datepicker", value: Date.today, autofocus: true %>
       <% else %>
-        <%= f.select :month_id, options_for_select(@months, f.object.month.id),
-          {prompt: t("outcomes.placeholder.month")},
-          {class: "form-control", autofocus: true} %>
+        <%= f.text_field :month, class: "form-control datepicker", autofocus: true %>
       <% end %>
     </div>
 

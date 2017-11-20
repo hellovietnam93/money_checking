@@ -12,28 +12,7 @@
 
   <div class="box-body">
     <%= form_tag @search, url: outcomes_path, method: :get do %>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="form-group">
-            <%= select_tag "month_id", options_for_select(@months, @month.last),
-              include_blank: true, class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-group">
-            <%= select_tag "category_id", options_for_select(@categories),
-              include_blank: true, class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-group">
-            <%= button_tag type: "submit", class: "btn btn-success" do %>
-              <i class="glyphicon glyphicon-search"></i>
-              <span><%= t "app.search" %></span>
-            <% end %>
-          </div>
-        </div>
-      </div>
+      <%= render "shared/search_month" %>
     <% end %>
   </div>
 
