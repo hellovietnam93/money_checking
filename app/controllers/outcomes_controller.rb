@@ -10,7 +10,7 @@ class OutcomesController < ApplicationController
       elsif params[:month].present?
         month = params[:month].split("-")
         current_user.outcomes.includes(:category)
-          .in_month month.first, month.last
+          .in_month(month.first, month.last).order :category_id
       elsif params[:category_id].present? && params[:month].present?
         month = params[:month].split("-")
         current_user.outcomes.includes(:category)
@@ -18,7 +18,8 @@ class OutcomesController < ApplicationController
           .in_month month.first, month.last
       else
         current_user.outcomes.includes(:category)
-          .in_month Date.today.year, Date.today.month
+          .in_month(Date.today.year, Date.today.month)
+          .order :category_id
       end
     load_statistic_data
   end
