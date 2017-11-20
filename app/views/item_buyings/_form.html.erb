@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <label for="estimate_start_time"><%= t "item_buyings.attributes.estimate_start_time" %></label>
-      <%= f.date_field :estimate_start_time, class: "form-control",
+      <%= f.text_field :estimate_start_time, class: "form-control datepicker",
         placeholder: t("item_buyings.placeholder.estimate_start_time"), autofocus: true %>
     </div>
 
