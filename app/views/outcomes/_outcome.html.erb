@@ -1,6 +1,6 @@
 <tr>
   <td class="stt"><%= outcome_counter + 1 %></td>
-  <td><%= outcome.month.value %></td>
+  <td><%= l outcome.month, format: :default %></td>
   <td><%= outcome.category.name %></td>
   <td><%= outcome.name %></td>
   <td><%= number_to_currency outcome.value %></td>

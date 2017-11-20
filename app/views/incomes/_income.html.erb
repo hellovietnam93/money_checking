@@ -1,6 +1,6 @@
 <tr>
   <td class="stt"><%= income_counter + 1 %></td>
-  <td><%= income.month.value %></td>
+  <td><%= l income.month, format: :default %></td>
   <td><%= income.category.name %></td>
   <td><%= income.name %></td>
   <td>

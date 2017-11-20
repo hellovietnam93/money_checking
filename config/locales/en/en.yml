@@ -55,7 +55,7 @@ en:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
-      month: "%m/%Y"
+      month: "%Y-%m"
   number:
     currency:
       format:

@@ -20,6 +20,7 @@ gem "bootstrap-sass"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "font-awesome-rails"
 gem "highcharts-rails"
+gem "bootstrap-datepicker-rails"
 
 group :development, :test do
   gem "mysql2", ">= 0.3.18", "< 0.5"
