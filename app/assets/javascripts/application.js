@@ -23,7 +23,6 @@
 //= require incomes
 //= require monthly_blance
 //= require bootstrap-datepicker
-//= require jquery.maskMoney
 
 $(document).on('turbolinks:load', function(){
   set_timeout();
@@ -37,8 +36,6 @@ $(document).on('turbolinks:load', function(){
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd'
   });
-
-  $(".currency").maskMoney({allowNegative: true, thousands:',', decimal:'.', affixesStay: false});
 });
 
 function set_timeout() {
