@@ -10,7 +10,7 @@
 
     <div class="form-group">
       <label for="value"><%= t "outcomes.attributes.value" %></label>
-      <%= f.text_field :value, class: "form-control currency",
+      <%= f.number_field :value, class: "form-control",
         placeholder: t("outcomes.placeholder.value"), autofocus: true %>
     </div>
 
